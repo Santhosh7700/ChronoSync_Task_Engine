@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Root layout: LinearLayout stacks the fragment container above
+  the Compose-powered bottom navigation bar.
+  Edge-to-edge is enabled in MainActivity, so the NavigationBar
+  Composable handles its own windowInsets padding automatically.
+-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Content area: each tab's Fragment lives here -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Compose bottom navigation bar -->
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/bottom_nav_compose"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
